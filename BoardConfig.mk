@@ -18,7 +18,7 @@
 #
 
 # Kernel Config
-TARGET_KERNEL_CONFIG := cyanogenmod_galaxys4gmtd_defconfig
+TARGET_KERNEL_CONFIG := niltmt_galaxys4gmtd_defconfig
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/galaxys4gmtd/recovery/recovery_keys.c
@@ -47,12 +47,15 @@ BOARD_SEPOLICY_DIRS += \
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 403701760
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 545259520
 
-# TWRP options
+# TWRP
 DEVICE_RESOLUTION := 480x800
-TW_NO_REBOOT_BOOTLOADER := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_EXTERNAL_STORAGE_PATH := "/sdcard"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_FLASH_FROM_STORAGE := true
-# Leave this as false for now, we can attempt to enable it later when we
-# make sure that the ramdisk can be injected to
 TW_INCLUDE_INJECTTWRP := false
-# Disable exfat, as it conflicts with something in the CM tree
-TW_NO_EXFAT := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_DEFAULT_EXTERNAL_STORAGE := true
+TW_HAS_DOWNLOAD_MODE := true
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/s5p_bl/brightness"
+TW_MAX_BRIGHTNESS := 255

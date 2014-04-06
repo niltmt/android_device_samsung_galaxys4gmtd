@@ -25,7 +25,11 @@ PRODUCT_COPY_FILES += \
 
 # GPSInit files
 PRODUCT_COPY_FILES += \
-	device/samsung/galaxys4gmtd/gps:system/etc/init.d/gps \
+	device/samsung/galaxys4gmtd/gps:system/etc/init.d/gps
+
+# TWRP
+PRODUCT_COPY_FILES += \
+     device/samsung/galaxys4gmtd/recovery.fstab:recovery/root/etc/twrp.fstab
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
