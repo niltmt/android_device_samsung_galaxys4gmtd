@@ -17,6 +17,14 @@
 # Product-specific compile-time definitions.
 #
 
+# Import the aries-common BoardConfigCommon.mk
+include device/samsung/aries-common/BoardConfigCommon.mk
+
+#Kernel
+TARGET_KERNEL_SOURCE := kernel/samsung/aries
+TARGET_KERNEL_CUSTOM_RAMDISK := false
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys4gmtd/shbootimg.mk
+
 # Kernel Config
 TARGET_KERNEL_CONFIG := niltmt_galaxys4gmtd_defconfig
 
@@ -27,9 +35,6 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/galaxys4gmtd/recovery/r
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/galaxys4gmtd/bluetooth
 
 TARGET_OTA_ASSERT_DEVICE := galaxys4g,galaxys4gmtd,SGH-T959V,SGH-T959W
-
-# Import the aries-common BoardConfigCommon.mk
-include device/samsung/aries-common/BoardConfigCommon.mk
 
 # Override stuff that doesn't match aries-common
 TARGET_USERIMAGES_USE_EXT4 := false

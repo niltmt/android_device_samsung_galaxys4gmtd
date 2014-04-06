@@ -14,6 +14,10 @@
 
 DEVICE_PACKAGE_OVERLAYS := device/samsung/galaxys4gmtd/overlay
 
+# Inherit common configuration
+$(call inherit-product, device/samsung/aries-common/device_base.mk)
+
+
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
 	device/samsung/galaxys4gmtd/etc/asound.conf:system/etc/asound.conf
@@ -40,9 +44,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/samsung/galaxys4gmtd/updater.sh:updater.sh \
 	device/samsung/galaxys4gmtd/fstab.aries:root/fstab.aries
-
-# Inherit common configuration
-$(call inherit-product, device/samsung/aries-common/device_base.mk)
 
 # Proprietary
 $(call inherit-product-if-exists, vendor/samsung/galaxys4gmtd/galaxys4gmtd-vendor.mk)
